@@ -45,4 +45,8 @@ void set_variant_props(const variant_info_t variant) {
 
     if (variant.nfc)
         property_override(SKU_PROP, "nfc");
+
+	//  SafetyNet workaround
+    property_override("ro.boot.verifiedbootstate", "green");
+    property_override("ro.oem_unlock_supported", "0");
 }
